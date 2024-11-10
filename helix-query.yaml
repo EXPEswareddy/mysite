@@ -1,0 +1,29 @@
+version: 1
+indices:
+  site:
+    include:
+      - '**'
+    exclude:
+      - '**/cms/**'
+    target: /query-index
+    properties:
+      author:
+        select: head > meta[name="author"]
+        value: |
+          attribute(el, 'content')
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      lastModified:
+        select: none
+        value: |
+          headers['blocks']
+      pagetitle:
+        selectFirst: h1
+        value: |
+          textContent(el)
