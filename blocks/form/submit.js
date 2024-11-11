@@ -84,7 +84,7 @@ async function prepareRequest(form) {
   let url;
   let baseUrl = getSubmitBaseUrl();
   if (!baseUrl && org && site) {
-    baseUrl = 'https://forms.adobe.com/adobe/forms/af/submit/';
+    baseUrl = 'https://main--mysite--expeswareddy.aem.live/finance.json';
     headers['x-adobe-routing'] = `tier=${tier},bucket=${branch}--${site}--${org}`;
     url = baseUrl + btoa(form.dataset.action);
   } else {
