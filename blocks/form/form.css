@@ -566,3 +566,12 @@ main form .wizard > .current-wizard-step.panel-wrapper:last-of-type ~ .wizard-bu
 main .form form:not(.edit-mode) .captcha-wrapper{
     display: none ;
 }
+
+button#submit-1 {
+    background: red;
+    color: black;
+}
+
+button#submit {
+    background: yellow;
+}
